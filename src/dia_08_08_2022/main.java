@@ -32,6 +32,4 @@ public class main {
         }
         throw new NoSuchElementException("Indíce não encontrado!");
     }
-
-
 }
