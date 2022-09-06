@@ -23,10 +23,15 @@ public class PrincipioSubstituicaoLiskov {
         System.out.println(vendedorDois.getNome() + " | " +
                 vendedorDois.getSalario() + " | " +
                 vendedorDois.getEndereco());
+
+        System.out.println("================================");
+
+        imprimir(estagiarioDois);
+        imprimir(vendedorDois);
     }
 
-    public static void ExecutarRefatorado() {
-
+    public static void imprimir(AbstractFuncionario funcionario) {
+        System.out.println(funcionario.getNome() + " | " + funcionario.getSalario() + " | " + funcionario.getEndereco());
         //Imprimir(vendedor);
         //Imprimir(estagiario);
     }
