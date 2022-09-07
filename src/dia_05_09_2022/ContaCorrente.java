@@ -1,32 +1,35 @@
 package dia_05_09_2022;
 
-public class ContaCorrente  implements InterfaceConta{
-    private Double saldo;
+public class ContaCorrente implements InterfaceConta{
+    private Double saldo = 0.0;
 
     @Override
-    public  void  creditar(double valor){
-        if (valor <= 0.0){
-            throw new RuntimeException("Valor inválido!");
-        }
+    public void creditar(Double valor) {
+        if (valor <= 0.0)
+            throw new RuntimeException("Valor inválido");
+
         this.saldo += valor;
     }
+
     @Override
-    public  void  debitar(double valor){
-        if (valor<= 0.0){
-            throw new RuntimeException("Valor inválido para dabito!");
-        }
+    public void debitar(Double valor) {
+        if (valor <= 0.0)
+            throw new RuntimeException("Valor inválido");
+
+        if ((this.saldo - valor) <= 0.0)
+            throw new RuntimeException("Valor inválido " +
+                    "para débito!");
+
         this.saldo -= valor;
     }
 
     @Override
-    public  void  debitar(double valor){
-        if ((this.saldo - valor) <= 0.0){
-            throw new RuntimeException("Valor inválido para dabito!");
-        }
+    public Double getSaldo() {
+        return this.saldo;
     }
 
     @Override
-    public Double  getSaldo(){
-        return  this.saldo;
+    public void investir(Double valor) {
+
     }
 }

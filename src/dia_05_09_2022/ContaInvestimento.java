@@ -1,8 +1,8 @@
 package dia_05_09_2022;
 
-public class ContaCorrenteRefatorada
-        implements InterfaceContaRefatorada{
+public class ContaInvestimento implements InterfaceConta{
     private Double saldo = 0.0;
+    private Double investimento = 0.0;
 
     @Override
     public void creditar(Double valor) {
@@ -27,5 +27,17 @@ public class ContaCorrenteRefatorada
     @Override
     public Double getSaldo() {
         return this.saldo;
+    }
+
+    @Override
+    public void investir(Double valor) {
+        if (valor <= 0.0)
+            throw new RuntimeException("Valor inválido");
+
+        if ((this.saldo - valor) <= 0.0)
+            throw new RuntimeException("Valor inválido " +
+                    "para investimento!");
+
+        this.investimento += valor;
     }
 }

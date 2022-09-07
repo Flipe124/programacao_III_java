@@ -1,8 +1,7 @@
 package dia_05_09_2022;
 
-public interface InterfaceConta {
+public interface InterfaceContaRefatorada {
     void creditar(Double valor);
     void debitar(Double valor);
     Double getSaldo();
-    void investir(Double valor);
 }
