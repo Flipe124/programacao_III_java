@@ -13,7 +13,7 @@ public class Main {
     private static  String pesquisaEmLargura(Hashtable<String, ArrayList<String>> hashtable, String verticeInicial){
         Queue<String> queue = new LinkedList<String>();
 
-        queue = enfilirarDados();
+//        queue = enfilirarDados();
 
 
 
